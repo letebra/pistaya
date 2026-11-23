@@ -34,6 +34,8 @@ async function encaminar() {
   const ruta = (location.hash.replace(/^#/, '') || '/').split('?')[0];
   const coincidencia = RUTES.map((r) => ({ r, m: ruta.match(r.patro) })).find((x) => x.m);
   const main = contingut();
+  // Si l'usuari navega amb un diàleg obert, es tanca.
+  bootstrap.Modal.getInstance(document.getElementById('modal-confirmar'))?.hide();
 
   if (!coincidencia) {
     document.title = 'Pàgina no trobada · PistaYa';
