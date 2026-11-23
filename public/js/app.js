@@ -36,6 +36,8 @@ async function encaminar() {
   const main = contingut();
   // Si l'usuari navega amb un diàleg obert, es tanca.
   bootstrap.Modal.getInstance(document.getElementById('modal-confirmar'))?.hide();
+  // Al mòbil, el menú desplegable es plega en triar una opció.
+  bootstrap.Collapse.getInstance(document.getElementById('nav-principal'))?.hide();
 
   if (!coincidencia) {
     document.title = 'Pàgina no trobada · PistaYa';

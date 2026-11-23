@@ -154,7 +154,7 @@ export async function vistaAdminReserves(main) {
           h('td', {}, h('span', { class: `badge ${r.estat === 'confirmada' ? 'text-bg-success' : 'text-bg-secondary'}` }, r.estat)),
           h('td', { class: 'text-nowrap' },
             r.estat === 'confirmada' && new Date(r.inici) > new Date()
-              ? h('button', { type: 'button', class: 'btn btn-sm btn-outline-warning me-1', onClick: () => cancellar(r) }, 'Cancel·lar') : null,
+              ? h('button', { type: 'button', class: 'btn btn-sm btn-outline-secondary me-1', onClick: () => cancellar(r) }, 'Cancel·lar') : null,
             h('button', { type: 'button', class: 'btn btn-sm btn-outline-danger', onClick: () => eliminar(r), 'aria-label': `Eliminar reserva ${r.id}` }, icona('trash')))))) : buit('No hi ha reserves.'));
     } catch (e) { error(e.message); }
   }
