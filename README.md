@@ -57,5 +57,5 @@ Base de dades: executar `supabase/schema.sql` a l’SQL Editor de Supabase i pos
 
 ## Desplegament
 
-* **Vercel**: cada *push* a `main` desplega la SPA (`public/`) i les funcions de `api/`.
+* **Vercel**: cada *push* a `main` desplega la SPA (`public/`, CDN) i les funcions de `api/` a la regió `dub1` (Dublín), al costat de la BBDD de Supabase (`eu-west-1`, Irlanda).
 * **GitHub Actions** (`.github/workflows/ci.yml`): sintaxi i proves a cada *push*.
