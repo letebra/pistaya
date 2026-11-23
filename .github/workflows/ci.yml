@@ -1,0 +1,22 @@
+# Integració contínua: a cada push o pull request es comprova la sintaxi i
+# s'executen les proves unitàries de la capa de negoci. Vercel desplega
+# automàticament la branca main quan el push arriba a GitHub.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  proves:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Comprovar sintaxi
+        run: npm run check
+      - name: Proves unitàries
+        run: npm test
