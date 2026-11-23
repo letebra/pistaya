@@ -2,7 +2,7 @@
 // Només hi ha un document HTML (index.html). La navegació canvia el fragment
 // de l'URL (#/...) i el router pinta la vista corresponent sense recarregar.
 import { h, buidar, icona } from './dom.js';
-import { iniciarAuth, usuari, esAdmin, enCanviar, sortir } from './auth.js';
+import { iniciarAuth, usuari, esAdmin, enCanviar, sortir, refrescarPerfil } from './auth.js';
 import { error, exit, carregant } from './ui.js';
 import { vistaInici } from './views/inici.js';
 import { vistaInstallacio } from './views/installacio.js';
@@ -50,6 +50,8 @@ async function encaminar() {
     error('Has d’iniciar sessió per accedir a aquesta pàgina.');
     return navegar('/entrar');
   }
+  // El rol es torna a consultar al servidor abans d'obrir l'administració.
+  if (r.acces === 'admin') await refrescarPerfil();
   if (r.acces === 'admin' && !esAdmin()) {
     error('Aquesta secció és només per a l’administració.');
     return navegar('/');
