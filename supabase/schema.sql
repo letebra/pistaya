@@ -193,6 +193,13 @@ drop policy if exists reserves_delete on public.reserves;
 create policy reserves_delete on public.reserves for delete to authenticated
   using (usuari_id = auth.uid() or public.es_admin());
 
+-- Permisos de l'API (el projecte no els dona automàticament). Les files que
+-- es poden veure o modificar les decideix RLS.
+grant usage on schema public to anon, authenticated;
+grant select on public.installacions, public.pistes to anon, authenticated;
+grant insert, update, delete on public.installacions, public.pistes to authenticated;
+grant select, insert, update, delete on public.reserves to authenticated;
+grant select, update, delete on public.usuaris to authenticated;
 grant execute on function public.franges_ocupades(bigint, date) to anon, authenticated;
 grant execute on function public.es_admin() to authenticated;
 
