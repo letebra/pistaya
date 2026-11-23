@@ -1,0 +1,35 @@
+/* PistaYa · estils propis sobre Bootstrap 5.
+   Colors amb contrast AA (verd #0b5e43 sobre blanc = 7,6:1). */
+:root {
+  --bs-primary: #0b5e43;
+  --bs-primary-rgb: 11, 94, 67;
+  --bs-link-color: #0b5e43;
+  --bs-link-color-rgb: 11, 94, 67;
+  --bs-link-hover-color: #073f2d;
+  --bs-body-bg: #f6f8f7;
+}
+.btn-primary {
+  --bs-btn-bg: #0b5e43; --bs-btn-border-color: #0b5e43;
+  --bs-btn-hover-bg: #084a35; --bs-btn-hover-border-color: #084a35;
+  --bs-btn-active-bg: #073f2d; --bs-btn-disabled-bg: #0b5e43; --bs-btn-disabled-border-color: #0b5e43;
+}
+.btn-outline-primary {
+  --bs-btn-color: #0b5e43; --bs-btn-border-color: #0b5e43;
+  --bs-btn-hover-bg: #0b5e43; --bs-btn-hover-border-color: #0b5e43;
+  --bs-btn-active-bg: #0b5e43; --bs-btn-active-border-color: #0b5e43;
+}
+.btn-check:checked + .btn-outline-primary { background-color: #0b5e43; color: #fff; }
+.barra { background: #0b5e43; --bs-navbar-color: rgba(255,255,255,.9); --bs-navbar-hover-color: #fff; --bs-navbar-active-color: #fff; }
+.peu { background: #e9efec; color: #2b3a34; }
+.hero { background: linear-gradient(135deg, #0b5e43 0%, #13835f 100%); color: #fff; }
+.targeta-installacio { transition: transform .15s ease, box-shadow .15s ease; }
+.targeta-installacio:hover { transform: translateY(-2px); box-shadow: 0 .5rem 1rem rgba(0,0,0,.08) !important; }
+.targeta-acces { max-width: 440px; }
+.ample-560 { max-width: 560px; }
+.ample-360 { max-width: 360px; }
+.franges { display: grid; grid-template-columns: repeat(auto-fill, minmax(5.2rem, 1fr)); gap: .5rem; }
+.franges .btn { padding: .45rem .25rem; }
+.franges .btn-outline-secondary { text-decoration: line-through; opacity: .6; }
+:focus-visible { outline: 3px solid #f0a202 !important; outline-offset: 2px; }
+main:focus, h1[tabindex="-1"]:focus, h2[tabindex="-1"]:focus { outline: none !important; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }

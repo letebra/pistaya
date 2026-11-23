@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PistaYa: reserva pistes de pàdel, tennis, futbol i bàsquet en segons.">
+  <meta name="theme-color" content="#0b5e43">
+  <title>PistaYa · Reserva de pistes esportives</title>
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="vendor/icons/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+  <a class="visually-hidden-focusable btn btn-light position-absolute m-2" href="#contingut">Salta al contingut</a>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark barra" aria-label="Navegació principal">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#/"><i class="bi bi-dribbble" aria-hidden="true"></i> PistaYa</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-principal"
+                aria-controls="nav-principal" aria-expanded="false" aria-label="Obrir el menú">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="nav-principal">
+          <ul class="navbar-nav me-auto" id="menu"></ul>
+          <div class="d-flex align-items-center flex-wrap gap-1 py-2 py-lg-0" id="zona-usuari"></div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="contingut" class="container py-4 flex-grow-1" tabindex="-1">
+    <noscript><div class="alert alert-warning">PistaYa necessita JavaScript activat.</div></noscript>
+  </main>
+
+  <footer class="peu py-3 mt-auto">
+    <div class="container small d-flex flex-wrap justify-content-between gap-2">
+      <span>PistaYa · Projecte 2 PATW · Grup 8</span>
+      <span>Leo Teruel Bravo · Eric Aljama Doncel · Gerard Canet Armans</span>
+    </div>
+  </footer>
+
+  <!-- Avisos (toasts) anunciats als lectors de pantalla -->
+  <div id="avisos" class="toast-container position-fixed bottom-0 end-0 p-3" aria-live="polite" aria-atomic="false"></div>
+
+  <!-- Diàleg de confirmació reutilitzable -->
+  <div class="modal fade" id="modal-confirmar" tabindex="-1" aria-labelledby="modal-confirmar-titol" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h5" id="modal-confirmar-titol">Confirmar</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tancar"></button>
+        </div>
+        <div class="modal-body"><p class="mb-0"></p></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">No, tornar</button>
+          <button type="button" class="btn btn-danger" data-confirmar>Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="vendor/supabase/supabase.js"></script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
